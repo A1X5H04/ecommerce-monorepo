@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "admin:dev": "pnpm --filter admin-cms dev",
+    "website:dev": "pnpm --filter website dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
