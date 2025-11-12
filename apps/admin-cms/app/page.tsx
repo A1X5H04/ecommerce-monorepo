@@ -2,14 +2,17 @@
 // import { Shell, SidebarProvider } from "@/components/layout/sidebar";
 import { Sidebar } from "@/components/layout/sidebar";
 import { Container, Button, Flex } from "@chakra-ui/react";
+import LoginPage from "./auth/login/page";
 
 export default function Home() {
   return (
-    <Flex height="full">
-      <Sidebar />
-      <Container>
-      <h2>Hello World</h2>
-      </Container>
-    </Flex>
+    // <Flex height="full">
+    //   <Sidebar />
+    //   <Container>
+    //   <h2>Hello World</h2>
+    //   </Container>
+    // </Flex>
+    <LoginPage />
+
   );
 }
