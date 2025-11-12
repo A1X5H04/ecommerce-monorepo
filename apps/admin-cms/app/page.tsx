@@ -6,13 +6,11 @@ import LoginPage from "./auth/login/page";
 
 export default function Home() {
   return (
-    // <Flex height="full">
-    //   <Sidebar />
-    //   <Container>
-    //   <h2>Hello World</h2>
-    //   </Container>
-    // </Flex>
-    <LoginPage />
-
+    <Flex height="full">
+      <Sidebar />
+      <Container>
+      <h2>Hello World</h2>
+      </Container>
+    </Flex>
   );
 }

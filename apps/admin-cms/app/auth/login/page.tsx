@@ -40,7 +40,7 @@ function LoginPage() {
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <Stack marginBottom="10">
-            <Field label="Email Address" errorText={errors.email?.message}>
+            <Field label="Email Address" invalid={!!errors.password} errorText={errors.email?.message}>
               <Input
                 type="email"
                 placeholder="sharukhkhan@example.com"
@@ -49,17 +49,16 @@ function LoginPage() {
               />
             </Field>
 
-            <Field label="Password" errorText={errors.password?.message}>
+            <Field label="Password" invalid={!!errors.password} errorText={errors.password?.message}>
               <PasswordInput
                 placeholder="Enter your password"
                 {...register("password")}
-                focusRingColor={errors.password ? "red.500" : "blue.500"}
               />
             </Field>
           </Stack>
 
-          <Button width="full" type="submit" fontWeight="semibold" disabled={isSubmitting}>
-            {isSubmitting ? "Logging in..." : "Login"}
+          <Button width="full" type="submit" fontWeight="semibold" loading={isSubmitting}>
+            Login
           </Button>
         </form>
       </Box>
