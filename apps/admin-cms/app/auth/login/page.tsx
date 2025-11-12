@@ -6,13 +6,8 @@ import { Field } from "@/components/ui/field";
 import { PasswordInput } from "@/components/ui/password-input";
 import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-
-const schema = yup.object().shape({
-  email: yup.string().email("Enter a valid email address").required("Email is required"),
-  password: yup.string().min(6, "Password must be at least 6 characters").required("Password is required"),
-});
+import { arktypeResolver } from "@hookform/resolvers/arktype";
+import { loginSchema } from "@/schema/auth";
 
 function LoginPage() {
   const {
@@ -20,7 +15,7 @@ function LoginPage() {
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm({
-    resolver: yupResolver(schema),
+    resolver: arktypeResolver(loginSchema),
   });
 
   const onSubmit = async (data: any) => {
